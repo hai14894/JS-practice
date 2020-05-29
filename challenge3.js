@@ -3,15 +3,29 @@ class Movie{
         this.title = titleP,
         this.duration = durationP,
         this.rating = ratingP 
-        this.watchCount = 0
+        this.watchCount = {}
+        
     }
+    
     printMovie(){
         console.log(`the movie name is ${this.title},${this.duration} minutes, rated ${this.rating} star , has been watched ${this.watchCount} times`)
     }
-    watch(){
-        this.watchCount++
+    watch(user){
+        
+        if(this.watchCount[user.email]){
+            this.watchCount[user.email]++
+        } else {
+            this.watchCount[user.email] = 1
+
+        }
     }
 }
-myMovie = new Movie("Inception", 180, 5)
-myMovie.watch()
-myMovie.printMovie()
+class User{
+    constructor(emailP ,nameP){
+        this.email = emailP
+        this.name = nameP
+    }
+}
+const myUser = new User("123@gmail.com", "Hai")
+const myMovie = new Movie("Inception", 180, 5)
+
