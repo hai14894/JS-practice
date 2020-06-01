@@ -14,3 +14,25 @@ function addUp(num) {
 function whichIsLarger(f, g) {
 	return f()>g() ? "f": g()>f() ? "g": "neither"
 }
+
+///Number Clamp
+// Have the function clamp(value, min, max) take the value parameter being passed and:
+// Return max if value is greater than max.
+// Return min if value is less than min.
+// Return value if neither of these conditions are met.
+function clamp(value, min, max){
+    return value > max ? max : value < min ? min : value
+}
+
+// 
+function reverseStr(string){
+    //#1 return string.split("").reverse().join("")
+    string = string.split("")
+    let reversedStr = []
+    for(let i = string.length; i > 0; i--){
+        reversedStr.push(string[i-1])
+    }
+    return reversedStr.join("")
+
+}
+console.log(reverseStr("hello"));
