@@ -1,4 +1,21 @@
-
+//only digits challenge
+const onlyDigits = (string) => {
+    string = string.split("")
+    let numArr =  Array.from(Array(10).keys()).join("")
+    let counter = 0
+	for(character of string){
+        if(numArr.includes(character)){
+            counter++
+        }
+    }
+    if(counter === string.length){
+        return true
+    } else{
+        return false
+    }
+    
+}
+console.log(onlyDigits("01231430"))
 //Palindrome challenge
     const palindrome = (str) => {
         let alphabetArr= [...Array(26)].map((_, i) => String.fromCharCode('a'.charCodeAt(0) + i))
@@ -17,7 +34,7 @@
             return false
         }
     }
-console.log(palindrome("race0 car"))
+// console.log(palindrome("race0 car"))
 
 
 
