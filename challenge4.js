@@ -25,14 +25,21 @@ function clamp(value, min, max){
 }
 
 // 
-function reverseStr(string){
-    //#1 return string.split("").reverse().join("")
-    string = string.split("")
-    let reversedStr = []
-    for(let i = string.length; i > 0; i--){
-        reversedStr.push(string[i-1])
-    }
-    return reversedStr.join("")
+// function reverseStr(string){
+//     //#1 return string.split("").reverse().join("")
+//     string = string.split("")
+//     let reversedStr = []
+//     for(let i = string.length - 1; i > 0; i--){
+//         reversedStr.push(string[i])
+//     }
+//     return reversedStr.join("")
 
-}
-console.log(reverseStr("hello"));
+// }
+// console.log(reverseStr("hello"));
+function reverseString(str) {
+    if (str === "")
+        return "";
+    else
+        return reverseString(str.substr(1)) + str.charAt(0);
+    }
+    console.log(reverseString("hello"));
