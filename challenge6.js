@@ -1,3 +1,4 @@
+//reading speed challenge
 function returnLowercaseArrayWithoutPunctuation(text) {
     text = text.toLowerCase().split("")
     let alphabetArr= [...Array(26)].map((_, i) => String.fromCharCode('a'.charCodeAt(0) + i))
@@ -11,10 +12,11 @@ function returnLowercaseArrayWithoutPunctuation(text) {
     return newArr.join("")
 }
 function readingSpeed(text){
-    text = text.split(" ")
+    let trimmedArr = returnLowercaseArrayWithoutPunctuation(text)
+    trimmedArr = trimmedArr.split(" ")
     let counter = 0
     let noDuplicateArr = []
-    for(word of text){
+    for(word of trimmedArr){
         if(noDuplicateArr.includes(word)){
             counter++
         }else{
@@ -24,4 +26,4 @@ function readingSpeed(text){
     return noDuplicateArr.join("").split("").length + counter
 }
 
-console.log(readingSpeed("red fish green fish"));
+console.log(readingSpeed("Red fish green fish fish!"));
