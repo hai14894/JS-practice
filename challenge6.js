@@ -26,4 +26,4 @@ function readingSpeed(text){
     return noDuplicateArr.join("").split("").length + counter
 }
 
-console.log(readingSpeed("Red fish green fish fish!"));
+console.log(readingSpeed("Red fish#$$#% green fish fish!"));
