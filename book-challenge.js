@@ -12,8 +12,10 @@ let books = [
         alreadyRead: true
     }
     ];
+const ul = document.createElement("ul")
 for(book of books){
-    let newP = document.createElement("p")
-    newP.innerHTML = book.title + "-" + book.author
-    document.body.appendChild(newP)
+    let li = document.createElement("li")
+    li.innerHTML = `${book.title} by ${book.author}`
+    ul.appendChild(li)
 }
+document.body.appendChild(ul)
