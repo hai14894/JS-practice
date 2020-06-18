@@ -12,3 +12,8 @@ let books = [
         alreadyRead: true
     }
     ];
+for(book of books){
+    let newP = document.createElement("p")
+    newP.innerHTML = book.title + "-" + book.author
+    document.body.appendChild(newP)
+}
